@@ -115,6 +115,28 @@
 			console.log(error);
 	  });
 	  
+	  
+	  
+	  vkBridge.send('VKWebAppGetLaunchParams')
+			.then((data) => {
+				if (data.vk_app_id) {
+					// Передаём параметры
+					var stringResult = data.vk_platform;
+					console.log(data.vk_platform);
+					console.log('результат моей переменной - ' + stringResult);
+					if (stringResult === 'desktop_web') return false;
+					console.log(stringResult === 'desktop_web');
+					if (stringResult === 'web_external') return false;
+					console.log(stringResult === 'web_external');
+					
+					return true;
+				}
+			})
+			.catch((error) => {
+				// Ошибка
+				console.log(error);
+			});
+	  
       
 	  
 	  
