@@ -77,6 +77,30 @@
 	  <!-- Vkontakte -->
 	  var myGameInstance = null;
 	  
+	  const script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          spinner.style.display = "none";
+          progressBarEmpty.style.display = "";
+          progressBarFull.style.width = `${100 * progress}%`;
+        }).then((unityInstance) => {
+			loadingCover.style.display = "none";
+			myGameInstance = unityInstance;
+          if (canFullscreen) {
+            if (!hideFullScreenButton) {
+              fullscreenButton.style.display = "";
+            }
+            fullscreenButton.onclick = () => {
+              unityInstance.SetFullscreen(1);
+            };
+          }
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+	  
+	  
 	  vkBridge.send("VKWebAppInit", {});
 	  
       
