@@ -107,12 +107,14 @@
 	  <!-- Баннер с рекламой -->
 	  vkBridge.send('VKWebAppShowBannerAd', { banner_location: 'bottom'}).then((data) =>
 	  {
+		console.log('зашли в метод показа баннера');
 		if (data.result)
 		{
 			// Баннерная реклама отобразилась
 			console.log('успех с баннером');
 		}
 	  }).catch((error) => {
+		  console.log('ошибка с баннером');
 		  	// Ошибка с баннером
 			console.log(error);
 	  });
