@@ -115,7 +115,17 @@
 			console.log(error);
 	  });
 	  
-      
+	  vkBridge.send('VKWebAppGetLaunchParams')
+			.then((data) => {
+				if (data.vk_app_id)
+				{
+					alert(data.vk_app_id);
+				}
+			})
+			.catch((error) => {
+				// Ошибка
+				console.log(error);
+			});
 	  
 	  
 	  
