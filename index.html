@@ -115,18 +115,6 @@
 			console.log(error);
 	  });
 	  
-	  vkBridge.send('VKWebAppGetLaunchParams')
-			.then((data) => {
-				if (data.vk_app_id)
-				{
-					alert(data.vk_platform);
-				}
-			})
-			.catch((error) => {
-				// Ошибка
-				console.log(error);
-			});
-	  
 	  
 	  
       document.body.appendChild(script);
