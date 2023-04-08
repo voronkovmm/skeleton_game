@@ -105,17 +105,7 @@
     };
 
 
-    vkBridge.send("VKWebAppInit", {}).then()
-    {
-      vkBridge.send('VKWebAppGetLaunchParams').then((data) => {
-      if (data.vk_app_id) {
-        var stringResult = data.vk_platform;
-        document.getElementsByClassName('textTest')[0].textContent = stringResult;
-      }
-    }).catch((error) => {
-      console.log(error);
-    });
-    };
+    vkBridge.send("VKWebAppInit", {});
 
 
     // Баннер
@@ -127,7 +117,26 @@
     });
 
 
+    var stringResult1;
+    var count = 1;
+    function PrintTest()
+    {
+      vkBridge.send('VKWebAppGetLaunchParams').then((data) => {
+      if (data.vk_app_id) {
+        stringResult1 = data.vk_platform;
+        document.getElementsByClassName('textTest')[0].textContent = stringResult;
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
 
+      while(true)
+      {
+        count++;
+        document.getElementsByClassName('textTest')[0].textContent = stringResult + " " + count;
+      }
+    }
+    PrintTest();
 
 
     document.body.appendChild(script);
