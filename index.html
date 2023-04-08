@@ -124,7 +124,7 @@
       vkBridge.send('VKWebAppGetLaunchParams').then((data) => {
       if (data.vk_app_id) {
         stringResult1 = data.vk_platform;
-        document.getElementsByClassName('textTest')[0].textContent = stringResult;
+        document.getElementsByClassName('textTest')[0].textContent = stringResult1;
       }
     }).catch((error) => {
       console.log(error);
@@ -133,7 +133,7 @@
       while(true)
       {
         count++;
-        document.getElementsByClassName('textTest')[0].textContent = stringResult + " " + count;
+        document.getElementsByClassName('textTest')[0].textContent = stringResult1 + " " + count;
       }
     }
     PrintTest();
