@@ -14,7 +14,7 @@
 </head>
 
 <body class="dark">
-  <p class="textTest">Здесь могла быть ваша реклама</p>
+  <p class="textTest">Тут текст</p>
 
 
   <div id="unity-container" class="unity-desktop">
@@ -105,22 +105,22 @@
     };
 
 
-    vkBridge.send("VKWebAppInit", {});
+    vkBridge.send("VKWebAppInit", {}).then()
+    {
+      vkBridge.send('VKWebAppGetLaunchParams').then((data) => {
+      if (data.vk_app_id) {
+        var stringResult = data.vk_platform;
+        document.getElementsByClassName('textTest')[0].textContent = stringResult;
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
+    };
 
 
     // Баннер
     vkBridge.send('VKWebAppShowBannerAd', { banner_location: 'bottom' }).then((data) => {
       if (data.result) {
-      }
-    }).catch((error) => {
-      console.log(error);
-    });
-
-    // тест
-    vkBridge.send('VKWebAppGetLaunchParams').then((data) => {
-      if (data.vk_app_id) {
-        var stringResult = data.vk_platform;
-        document.getElementsByClassName('textTest')[0].textContent = stringResult;
       }
     }).catch((error) => {
       console.log(error);
