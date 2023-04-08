@@ -104,16 +104,16 @@
 	  vkBridge.send("VKWebAppInit", {});
 	  
 	  
-	  <!-- Баннер с рекламой -->
+	  // Баннер
 	  vkBridge.send('VKWebAppShowBannerAd', { banner_location: 'bottom'}).then((data) =>
 	  { 
-		if (data.result)
-		{
-			// Баннерная реклама отобразилась
+		if (data.result){			
 		}
 	  }).catch((error) => {
 			console.log(error);
 	  });
+	  
+      
 	  
 	  
 	  
