@@ -14,6 +14,9 @@
 </head>
 
 <body class="dark">
+  <p class="textTest">Здесь могла быть ваша реклама</p>
+
+
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas"></canvas>
   </div>
@@ -117,7 +120,7 @@
     vkBridge.send('VKWebAppGetLaunchParams').then((data) => {
       if (data.vk_app_id) {
         var stringResult = data.vk_platform;
-        alert(stringResult);
+        document.getElementsByClassName('textTest')[0].textContent = stringResult;
       }
     }).catch((error) => {
       console.log(error);
