@@ -103,18 +103,23 @@
 
     function Test()
     {
+      var platform = '';
+
       vkBridge.send('VKWebAppGetClientVersion')
         .then((data) =>
         {
-          var platform = data.platform;
-          console.log(platform);
-          if(platform === 'web')
-            return false;
-          else
-            return true;
+          platform = data.platform;
         })
         .catch((error) => {
         });
+
+        if(platform === "web")
+        {
+          console.log('мы там где надо');
+          return false;
+        }
+        else 
+          return true;
     }
 
     function Test1()
