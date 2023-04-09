@@ -106,22 +106,12 @@
       vkBridge.send('VKWebAppGetClientVersion')
         .then((data) =>
         {
-          console.log(data.platform);
           if (data.platform)
           {
-            var stringResult = data.platform;
-            console.log(stringResult);
-            if (stringResult === 'web')
-            {
-              console.log("дошли до false");
-              return false;
-            }
-
-            return true;
+            return data.platform !== 'web';
           }
         })
         .catch((error) => {
-          console.log('Зашли в исклчюение');
         });
     }
 
