@@ -106,10 +106,12 @@
       vkBridge.send('VKWebAppGetClientVersion')
         .then((data) =>
         {
-          if (data.platform)
-          {
-            return data.platform !== 'web';
-          }
+          var platform = data.platform;
+          console.log(platform);
+          if(platform === 'web')
+            return false;
+          else
+            return true;
         })
         .catch((error) => {
         });
