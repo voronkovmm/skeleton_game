@@ -89,14 +89,14 @@
       }).then((unityInstance) => {
         loadingCover.style.display = "none";
         myGameInstance = unityInstance;
-        if (canFullscreen) {
-          if (!hideFullScreenButton) {
-            fullscreenButton.style.display = "";
-          }
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }
+        // if (canFullscreen) {
+        //   if (!hideFullScreenButton) {
+        //     fullscreenButton.style.display = "";
+        //   }
+        //   fullscreenButton.onclick = () => {
+        //     unityInstance.SetFullscreen(1);
+        //   };
+        // }
       }).catch((message) => {
         alert(message);
       });
