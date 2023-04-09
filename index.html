@@ -35,7 +35,7 @@
       dataUrl: buildUrl + "/template.data.unityweb",
       frameworkUrl: buildUrl + "/template.framework.js.unityweb",
       codeUrl: buildUrl + "/template.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: "StreamingAssets",
       companyName: "voronkovmm",
       productName: "Skeletons",
       productVersion: "1.0",
@@ -112,6 +112,25 @@
     }).catch((error) => {
       console.log(error);
     });
+
+
+    function Test() {
+      vkBridge.send('VKWebAppGetClientVersion')
+        .then((data) => {
+          if (data.platform) {
+            var stringResult = data.platform;
+
+            if (stringResult === 'web')
+              return false;
+
+            return true;
+          }
+        })
+        .catch((error) => {
+        });
+    }
+
+    console.log(Test());
 
 
 
