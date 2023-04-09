@@ -115,6 +115,13 @@
         });
     }
 
+    function Test1()
+    {
+      var stroka = "suslik";
+      if(stroka)
+        return stroka === "suslik";
+    }
+
 
     //vkBridge.send("VKWebAppInit", {});
 
@@ -123,8 +130,11 @@
       var result = Test();
       console.log(Test());
       console.log(result);
-      alert(Test());
-      alert(result);
+      //alert(Test());
+      //alert(result);
+
+      alert(Test1());
+      console.log(Test1());
     };
 
 
