@@ -102,7 +102,16 @@
     };
 
 
-    vkBridge.send("VKWebAppInit", {});
+    //vkBridge.send("VKWebAppInit", {});
+
+    vkBridge.send("VKWebAppInit", {}).then()
+    {
+      var result = Test();
+      console.log(Test());
+      console.log(result);
+      alert(Test());
+      alert(result);
+    };
 
 
     // Баннер
@@ -120,8 +129,7 @@
           if (data.platform) {
             var stringResult = data.platform;
 
-            if (stringResult === 'web')
-            {
+            if (stringResult === 'web') {
               console.log("дошли до false");
               return false;
             }
@@ -132,12 +140,6 @@
         .catch((error) => {
         });
     }
-
-    var result = Test();
-    console.log(Test());
-    console.log(result);
-    alert(Test());
-    alert(result);
 
 
 
