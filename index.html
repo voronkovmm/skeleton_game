@@ -35,7 +35,7 @@
       dataUrl: buildUrl + "/template.data.unityweb",
       frameworkUrl: buildUrl + "/template.framework.js.unityweb",
       codeUrl: buildUrl + "/template.wasm.unityweb",
-      streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: "StreamingAssets",
       companyName: "voronkovmm",
       productName: "Skeletons",
       productVersion: "1.0",
@@ -101,48 +101,8 @@
       });
     };
 
-    function Test()
-    {
-      var platform = '';
 
-      vkBridge.send('VKWebAppGetClientVersion')
-        .then((data) =>
-        {
-          platform = data.platform;
-        })
-        .catch((error) => {
-        });
-
-        if(platform === "web")
-        {
-          console.log('мы там где надо');
-          return false;
-        }
-        else 
-          return true;
-    }
-
-    function Test1()
-    {
-      var stroka = "suslik";
-      if(stroka)
-        return stroka === "suslik";
-    }
-
-
-    //vkBridge.send("VKWebAppInit", {});
-
-    vkBridge.send("VKWebAppInit", {}).then()
-    {
-      var result = Test();
-      console.log(Test());
-      console.log(result);
-      //alert(Test());
-      //alert(result);
-
-      alert(Test1());
-      console.log(Test1());
-    };
+    vkBridge.send("VKWebAppInit", {});
 
 
     // Баннер
