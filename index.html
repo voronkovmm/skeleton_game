@@ -101,28 +101,6 @@
       });
     };
 
-
-    //vkBridge.send("VKWebAppInit", {});
-
-    vkBridge.send("VKWebAppInit", {}).then()
-    {
-      var result = Test();
-      console.log(Test());
-      console.log(result);
-      alert(Test());
-      alert(result);
-    };
-
-
-    // Баннер
-    vkBridge.send('VKWebAppShowBannerAd', { banner_location: 'top' }).then((data) => {
-      if (data.result) {
-      }
-    }).catch((error) => {
-      console.log(error);
-    });
-
-
     function Test()
     {
       vkBridge.send('VKWebAppGetClientVersion')
@@ -146,6 +124,27 @@
           console.log('Зашли в исклчюение');
         });
     }
+
+
+    //vkBridge.send("VKWebAppInit", {});
+
+    vkBridge.send("VKWebAppInit", {}).then()
+    {
+      var result = Test();
+      console.log(Test());
+      console.log(result);
+      alert(Test());
+      alert(result);
+    };
+
+
+    // Баннер
+    vkBridge.send('VKWebAppShowBannerAd', { banner_location: 'top' }).then((data) => {
+      if (data.result) {
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
 
 
 
