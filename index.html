@@ -123,18 +123,25 @@
     });
 
 
-    function Test() {
+    var result;
+    function Test()
+    {
       vkBridge.send('VKWebAppGetClientVersion')
-        .then((data) => {
-          if (data.platform) {
+        .then((data) =>
+        {
+          if (data.platform)
+          {
             var stringResult = data.platform;
 
-            if (stringResult === 'web') {
+            if (stringResult === 'web')
+            {
               console.log("дошли до false");
-              return false;
+              result = false;
+              return result;
             }
 
-            return true;
+            result = true;
+            return result;
           }
         })
         .catch((error) => {
