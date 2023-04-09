@@ -121,7 +121,10 @@
             var stringResult = data.platform;
 
             if (stringResult === 'web')
+            {
+              console.log("дошли до false");
               return false;
+            }
 
             return true;
           }
@@ -130,7 +133,11 @@
         });
     }
 
+    var result = Test();
+    console.log(Test());
+    console.log(result);
     alert(Test());
+    alert(result);
 
 
 
